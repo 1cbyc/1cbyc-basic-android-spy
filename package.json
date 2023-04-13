@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "ejs": "^3.1.9"
+    "ejs": "^3.1.9",
+    "json-server": "^0.17.3"
   }
 }
