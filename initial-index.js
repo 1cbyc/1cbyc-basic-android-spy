@@ -1,9 +1,7 @@
 const
     express = require('express'),
     app = express(),
-    http = require('http'),
-    server = http.createServer(app),
-    IO = require('socket.io')(server), // create a socket.io server by passing the http.Server object
+    IO = require('socket.io'),
     geoip = require('geoip-lite'),
     CONST = require('./includes/const'),
     db = require('./includes/databaseGateway'),
@@ -18,8 +16,10 @@ global.app = app;
 global.clientManager = clientManager;
 global.apkBuilder = apkBuilder;
 
-IO.sockets.pingInterval = 30000;
-IO.on('connection', (socket) => {
+let client_io = IO.listen(CONST.control_port);
+
+client_io.sockets.pingInterval = 30000;
+client_io.on('connection', (socket) => {
     socket.emit('welcome');
     let clientParams = socket.handshake.query;
     let clientAddress = socket.request.connection;
@@ -55,15 +55,15 @@ IO.on('connection', (socket) => {
 
 });
 
+
 // my initial thoughts on admin sys
-server.listen(CONST.web_port); // use server.listen instead of app.listen
+app.listen(CONST.web_port);
 
 app.set('view engine', 'ejs');
 app.set('views', './assets/views');
 app.use(express.static(__dirname + '/assets/webpublic'));
 app.use(require('./includes/expressRoutes'));
 
-// dotenv and other code goes here
 
 // I am clueless about the next four lines of code. Akin suggested it
 
