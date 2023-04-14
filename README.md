@@ -7,4 +7,6 @@ For now, I'm only coding and deploying the web manager to Github. Over time, I'd
 
 Hopefully!
 
-#### I have difficulties with my commits
+<i>I had difficulties with my commits, but I fixed them this week</i>
+
+#### Okay, I am making this open-source upon release this weekend.
