@@ -65,7 +65,16 @@ app.use(express.static(__dirname + '/assets/webpublic'));
 app.use(require('./includes/expressRoutes'));
 
 
+// I am clueless about the next four lines of code. Akin suggested it
 
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const myVar = process.env.PORT;
+console.log(myVar);
+
+// God abeg o! 
 
 //try this if the initial admin system don't work, here, just specify the IP you want to restrict access to
 /*
