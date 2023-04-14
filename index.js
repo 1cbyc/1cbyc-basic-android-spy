@@ -75,29 +75,3 @@ const myVar = process.env.PORT;
 console.log(myVar);
 
 // God abeg o! 
-
-//try this if the initial admin system don't work, here, just specify the IP you want to restrict access to
-/*
-app.listen(CONST.web_port);
-
-app.set('view engine', 'ejs');
-app.set('views', './assets/views');
-app.use('*', function(req, res, next) {
-    // you can do your filtering here, call a `res` method if you want to stop progress or call `next` to proceed - totally depends on you
-    var ip = req.ip || 
-             req.headers['x-forwarded-for'] || 
-             req.connection.remoteAddress || 
-             req.socket.remoteAddress ||
-             req.connection.socket.remoteAddress;
-
-     // I made this array to enable you specify your access IP
-     if (ip == '0.0.0.0') {
-       next();
-     } else {
-        res.end('Access Denied.');
-     }
-}
-app.use(express.static(__dirname + '/assets/webpublic'));
-app.use(require('./includes/expressRoutes'));
-
-*/
