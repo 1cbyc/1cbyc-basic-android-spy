@@ -54,3 +54,5 @@ exports.logTypes = {
         color: 'blue'
     }
 }
+
+// one can be a clown innit - wtf
